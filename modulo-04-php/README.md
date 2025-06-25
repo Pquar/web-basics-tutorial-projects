@@ -2,9 +2,9 @@
 Para rodar o PHP, você precisa ter o PHP instalado na sua máquina. Para isso, você pode seguir o tutorial do [site oficial](https://www.php.net/manual/pt_BR/install.php).
 ou usar pelo codespaces do github.
 Entre no repositório de [demo do php](https://github.com/jimblizzard/codespaces-for-php-demo), clique em open em codespace como na imagem abaixo:
-![codespace](img/image.png)
+![codespace](modulo-04-php/img/image.png)
 Apos isso ira Abrir o codespace "e um computador em nuvem para voce". ultilizar.
-![codespace](img/image-1.png)
+![codespace](modulo-04-php/img/image-1.png)
 Para iniciar uma server com php, abra o terminal e digite o comando:
 ```bash
 php -S localhost:8000

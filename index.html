@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Projetos Web Básicos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'spin-slow': 'spin 1s linear infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos para conteúdo markdown */
+        .markdown-content {
+            line-height: 1.6;
+            color: #374151;
+        }
+
+        .markdown-content h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 1.5rem 0 1rem 0;
+            color: #1f2937;
+        }
+
+        .markdown-content h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1.25rem 0 0.75rem 0;
+            color: #1f2937;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin: 1rem 0 0.5rem 0;
+            color: #374151;
+        }
+
+        .markdown-content p {
+            margin: 0.75rem 0;
+            color: #374151;
+        }
+
+        .markdown-content ul,
+        .markdown-content ol {
+            margin: 0.75rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .markdown-content li {
+            margin: 0.25rem 0;
+            color: #374151;
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .markdown-content a {
+            color: #3b82f6;
+            text-decoration: underline;
+        }
+
+        .markdown-content a:hover {
+            color: #1d4ed8;
+        }
+
+        .markdown-content blockquote {
+            border-left: 4px solid #e5e7eb;
+            padding-left: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+            color: #6b7280;
+        }
+
+        /* Estilos específicos para blocos de código */
+        .markdown-content pre {
+            background-color: #1f2937 !important;
+            color: #f9fafb !important;
+            padding: 1rem !important;
+            border-radius: 0.5rem !important;
+            overflow-x: auto !important;
+            margin: 1rem 0 !important;
+            font-family: 'Courier New', Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;
+            font-size: 0.875rem !important;
+            line-height: 1.5 !important;
+        }
+
+        .markdown-content pre code {
+            background-color: transparent !important;
+            color: inherit !important;
+            padding: 0 !important;
+            font-size: inherit !important;
+            border-radius: 0 !important;
+        }
+
+        .markdown-content code {
+            background-color: #f3f4f6 !important;
+            color: #ef4444 !important;
+            padding: 0.125rem 0.25rem !important;
+            border-radius: 0.25rem !important;
+            font-family: 'Courier New', Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;
+            font-size: 0.875rem !important;
+        }
+
+        .markdown-content table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .markdown-content th,
+        .markdown-content td {
+            border: 1px solid #e5e7eb;
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        .markdown-content th {
+            background-color: #f9fafb;
+            font-weight: bold;
+        }
+
+        /* Estilos customizados para sidebar e scroll */
+        #sidebar {
+            scrollbar-width: auto;
+            scrollbar-color: #cbd5e1 #f8fafc;
+        }
+
+        #sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #sidebar::-webkit-scrollbar-track {
+            background: #f8fafc;
+        }
+
+        #sidebar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        #sidebar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Garantir que o body ocupe toda a altura da tela */
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 h-screen flex overflow-hidden">
+
+
+    <!-- Área Principal de Conteúdo -->
+    <div class="flex-1 flex flex-col h-full overflow-hidden">
+        <!-- Header Fixo -->
+        <header class="bg-white shadow-sm border-b border-gray-200 p-4 flex-shrink-0">
+            <div class="flex items-center justify-between">
+                <button id="homeButton"
+                    class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200">
+                    🏠 Início
+                </button>
+                <div>
+                    <h1 id="contentTitle" class="text-2xl font-bold text-gray-800">Bem-vindo à Trilha de Aprendizado
+                    </h1>
+                    <p id="contentSubtitle" class="text-gray-600">Selecione um módulo ou projeto para começar</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="prevButton"
+                        class="hidden px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg transition-colors duration-200 flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                            </path>
+                        </svg>
+                        Anterior
+                    </button>
+                    <button id="nextButton"
+                        class="hidden px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors duration-200 flex items-center">
+                        Próximo
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Área de Conteúdo -->
+        <main class="flex-1 overflow-hidden min-h-0">
+            <!-- Página Inicial -->
+            <div id="homePage" class="h-full overflow-y-auto bg-gradient-to-br from-blue-500 to-purple-600 p-8">
+                <div class="max-w-4xl mx-auto text-center text-white">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+                        Projetos que irá aprender
+                    </h1>
+                    <p class="text-xl md:text-2xl opacity-90 mb-12">
+                        Coleção de projetos para aprender HTML, CSS e JavaScript
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                        <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30">
+                            <div class="text-4xl mb-4">📚</div>
+                            <h3 class="text-xl font-semibold mb-2">Módulos</h3>
+                            <p class="text-white/80">Aprenda os fundamentos</p>
+                        </div>
+                        <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30">
+                            <div class="text-4xl mb-4">🚀</div>
+                            <h3 class="text-xl font-semibold mb-2">Projetos</h3>
+                            <p class="text-white/80">Pratique com projetos reais</p>
+                        </div>
+                        <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/30">
+                            <div class="text-4xl mb-4">🎯</div>
+                            <h3 class="text-xl font-semibold mb-2">Extras</h3>
+                            <p class="text-white/80">Desafios avançados</p>
+                        </div>
+                    </div>
+
+                    <p class="text-lg opacity-80">
+                        💻 Desenvolvido para aprendizado de tecnologias web<br>
+                        🎓 HTML • CSS • JavaScript • APIs • Bootstrap
+                    </p>
+                </div>
+            </div>
+
+            <!-- Conteúdo Markdown -->
+            <div id="markdownContent" class="hidden h-full overflow-y-auto bg-white p-8">
+                <div class="max-w-4xl mx-auto markdown-content" id="markdownContainer">
+                    <!-- Conteúdo markdown será inserido aqui -->
+                </div>
+            </div>
+
+            <!-- Iframe para Projetos -->
+            <div id="iframeContent" class="hidden h-full">
+                <div id="loadingIndicator" class="flex items-center justify-center h-full text-xl text-gray-600">
+                    <span class="mr-3">Carregando projeto...</span>
+                    <div class="w-6 h-6 border-2 border-blue-500 border-t-transparent rounded-full animate-spin-slow">
+                    </div>
+                </div>
+                <iframe id="projectFrame" class="hidden w-full h-full border-none bg-white" src="about:blank"></iframe>
+            </div>
+        </main>
+    </div>
+    <!-- Sidebar Fixo -->
+    <div id="sidebar" class="w-80 bg-white shadow-xl border-r border-gray-200 flex-shrink-0 h-full overflow-y-auto">
+        <div class="p-6">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 flex items-center mb-2">
+                    <span class="mr-2">🎓</span> Trilha de Aprendizado
+                </h2>
+                <p class="text-sm text-gray-600">Seu progresso na jornada web</p>
+            </div>
+
+            <!-- Módulos -->
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold text-gray-700 mb-4 flex items-center border-b border-gray-200 pb-2">
+                    <span class="mr-2">📚</span> Módulos
+                </h3>
+                <div id="sidebarModulos" class="space-y-2">
+                    <!-- Módulos serão inseridos aqui -->
+                </div>
+            </div>
+
+            <!-- Projetos -->
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold text-gray-700 mb-4 flex items-center border-b border-gray-200 pb-2">
+                    <span class="mr-2">🚀</span> Projetos
+                </h3>
+                <div id="sidebarProjetos" class="space-y-3">
+                    <!-- Projetos serão inseridos aqui -->
+                </div>
+            </div>
+
+            <!-- Extras -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-gray-700 mb-4 flex items-center border-b border-gray-200 pb-2">
+                    <span class="mr-2">🎯</span> Extras
+                </h3>
+                <div id="sidebarExtras" class="space-y-2">
+                    <!-- Extras serão inseridos aqui -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="projeto-11-iframe/js/index.js"></script>
+</body>
+
+</html>

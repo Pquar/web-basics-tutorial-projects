@@ -1,0 +1,188 @@
+{
+  "modulos": [
+    {
+      "titulo": "HTML Básico",
+      "descricao": "Estrutura e tags fundamentais",
+      "link": "modulo-01-html",
+      "icone": "📝"
+    },
+    {
+      "titulo": "CSS Styling",
+      "descricao": "Estilos e layout responsivo",
+      "link": "modulo-02-css",
+      "icone": "🎨"
+    },
+    {
+      "titulo": "JavaScript",
+      "descricao": "Programação e interatividade",
+      "link": "modulo-03-js",
+      "icone": "⚡"
+    },
+    {
+      "titulo": "PHP Backend",
+      "descricao": "Programação server-side",
+      "link": "modulo-04-php",
+      "icone": "🐘"
+    }
+  ],
+  "projetos": [
+    {
+      "titulo": "Jogo T-Rex (Mario)",
+      "descricao": "Jogo estilo Chrome Dino Runner com o personagem Mario. Use as setas para pular os obstáculos!",
+      "icone": "🎮",
+      "tecnologias": ["HTML5", "CSS3", "JavaScript", "Game Dev"],
+      "projetos": [
+        {
+          "titulo": "Jogar Agora",
+          "link": "projeto-1-jogo-t-rex/index.html"
+        }
+      ]
+    },
+    {
+      "titulo": "Calculadora",
+      "descricao": "Calculadora funcional com interface moderna. Versões com diferentes lógicas de programação.",
+      "icone": "🧮",
+      "tecnologias": ["HTML5", "CSS3", "JavaScript", "Math"],
+      "projetos": [
+        {
+          "titulo": "Calculadora Básica",
+          "link": "projeto-2-calculadora/calculadora/index.html"
+        },
+        {
+          "titulo": "Calculadora IF-Else",
+          "link": "projeto-2-calculadora/calculadora-if-else/index.html"
+        }
+      ]
+    },
+    {
+      "titulo": "Lista de Tarefas",
+      "descricao": "Aplicativo de gerenciamento de tarefas com funcionalidades de adicionar e remover itens.",
+      "icone": "✅",
+      "tecnologias": ["HTML5", "CSS3", "JavaScript", "DOM"],
+      "projetos": [
+        {
+          "titulo": "To-Do List",
+          "link": "projeto-3-to-do/index.html"
+        }
+      ]
+    },
+    {
+      "titulo": "Website de Viagens",
+      "descricao": "Site responsivo sobre destinos turísticos com páginas dedicadas a diferentes cidades.",
+      "icone": "🌍",
+      "tecnologias": ["HTML5", "CSS3", "Responsive"],
+      "projetos": [
+        {
+          "titulo": "Página Principal",
+          "link": "projeto-4-website/index.html"
+        },
+        {
+          "titulo": "Tokyo",
+          "link": "projeto-4-website/artigos/tokyo.html"
+        }
+      ]
+    },
+    {
+      "titulo": "Revisão de Conceitos",
+      "descricao": "Conjunto de exercícios práticos cobrindo IMC, tabelas, semântica HTML e formatação de texto.",
+      "icone": "🔄",
+      "tecnologias": ["HTML5", "Semantic HTML", "Forms"],
+      "projetos": [
+        {
+          "titulo": "Calculadora IMC",
+          "link": "projeto-5-revisao/calculadora-imc.html"
+        },
+        {
+          "titulo": "Tabela Completa",
+          "link": "projeto-5-revisao/tabela-completa.html"
+        },
+        {
+          "titulo": "Tags Semânticas",
+          "link": "projeto-5-revisao/tags-semanticas.html"
+        },
+        {
+          "titulo": "Tipos de Texto",
+          "link": "projeto-5-revisao/tipos-de-textos.html"
+        }
+      ]
+    },
+    {
+      "titulo": "Pokédex",
+      "descricao": "Pokédex interativa consumindo API para exibir informações dos Pokémons de forma dinâmica.",
+      "icone": "⚡",
+      "tecnologias": ["HTML5", "CSS3", "JavaScript", "API"],
+      "projetos": [
+        {
+          "titulo": "Pokédex",
+          "link": "projeto-6-pokedex/index.html"
+        }
+      ]
+    },
+    {
+      "titulo": "Praticando com APIs",
+      "descricao": "Projetos que consomem APIs externas: frases do Chuck Norris e citações inspiradoras.",
+      "icone": "🔌",
+      "tecnologias": ["JavaScript", "Fetch API", "JSON", "Async"],
+      "projetos": [
+        {
+          "titulo": "Chuck Norris",
+          "link": "projeto-7-praticando-apis/chuck-norris/index.html"
+        },
+        {
+          "titulo": "Citações",
+          "link": "projeto-7-praticando-apis/citacao/index.html"
+        }
+      ]
+    },
+    {
+      "titulo": "Bootstrap",
+      "descricao": "Exemplo de uso do framework Bootstrap para criação de layouts responsivos e modernos.",
+      "icone": "🎨",
+      "tecnologias": ["HTML5", "Bootstrap", "Responsive"],
+      "projetos": [
+        {
+          "titulo": "Ver Design",
+          "link": "projeto-8-bootstrap/index.html"
+        }
+      ]
+    },
+    {
+      "titulo": "Chatbot com IA",
+      "descricao": "Chatbot simples com interface web e respostas automáticas.",
+      "icone": "🤖",
+      "tecnologias": ["HTML5", "CSS3", "JavaScript", "AI"],
+      "projetos": [
+        {
+          "titulo": "Chatbot",
+          "link": "projeto-10-ai/chatbot/index.html"
+        }
+      ]
+    },
+    {
+      "titulo": "Catálogo de Projetos (Iframe)",
+      "descricao": "Catálogo interativo de projetos usando iframe e carregamento dinâmico.",
+      "icone": "🗂️",
+      "tecnologias": ["HTML5", "CSS3", "JavaScript", "Iframe"],
+      "projetos": [
+        {
+          "titulo": "Catálogo",
+          "link": "projeto-11-iframe/index.html"
+        }
+      ]
+    }
+  ],
+  "extras": [
+    {
+      "titulo": "Flappy Bird",
+      "descricao": "Clone do famoso jogo Flappy Bird",
+      "icone": "🐦",
+      "link": "projeto-9-extras/flapy-bird/index.html"
+    },
+    {
+      "titulo": "Parallax Scrolling",
+      "descricao": "Efeito visual de profundidade no scroll",
+      "icone": "🌌",
+      "link": "projeto-9-extras/parallax-scrolling/"
+    }
+  ]
+}
