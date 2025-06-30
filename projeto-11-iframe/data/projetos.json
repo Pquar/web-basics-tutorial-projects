@@ -3,7 +3,10 @@
     {
       "titulo": "HTML Básico",
       "descricao": "Estrutura e tags fundamentais",
-      "link": "modulo-01-html",
+      "link": [
+        { "titulo": "Módulo 01 - HTML", "link": "modulo-01-html" },
+        { "titulo": "Tags", "link": "modulo-01-html/tags" }
+      ],
       "icone": "📝"
     },
     {

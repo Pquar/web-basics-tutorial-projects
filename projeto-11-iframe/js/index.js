@@ -37,15 +37,26 @@ class PortfolioManager {
   buildAllItemsList() {
     this.allItems = [];
 
-    // Adicionar módulos
+    // Adicionar módulos (agora aceita array de links)
     if (this.data.modulos) {
       this.data.modulos.forEach((modulo) => {
-        this.allItems.push({
-          type: "modulo",
-          title: modulo.titulo,
-          link: modulo.link,
-          data: modulo,
-        });
+        if (Array.isArray(modulo.link)) {
+          modulo.link.forEach((link) => {
+            this.allItems.push({
+              type: "modulo",
+              title: modulo.titulo,
+              link: link,
+              data: modulo,
+            });
+          });
+        } else {
+          this.allItems.push({
+            type: "modulo",
+            title: modulo.titulo,
+            link: modulo.link,
+            data: modulo,
+          });
+        }
       });
     }
 
@@ -112,27 +123,43 @@ class PortfolioManager {
     container.innerHTML = "";
 
     this.data.modulos.forEach((modulo) => {
-      const moduloElement = this.createModuloElement(modulo);
-      container.appendChild(moduloElement);
+      if (Array.isArray(modulo.link)) {
+        modulo.link.forEach((linkObj, idx) => {
+          // Se o link for objeto, pode ter título próprio
+          let link, subtitulo;
+          if (typeof linkObj === "object" && linkObj !== null) {
+            link = linkObj.link || linkObj.url || linkObj.path;
+            subtitulo = linkObj.titulo || linkObj.nome || `Parte ${idx + 1}`;
+          } else {
+            link = linkObj;
+            subtitulo = undefined;
+          }
+          const moduloElement = this.createModuloElement(modulo, link, subtitulo);
+          container.appendChild(moduloElement);
+        });
+      } else {
+        const moduloElement = this.createModuloElement(modulo, modulo.link);
+        container.appendChild(moduloElement);
+      }
     });
   }
 
-  createModuloElement(modulo) {
+  createModuloElement(modulo, link, subtitulo) {
     const div = document.createElement("div");
     div.className =
-      "p-3 rounded-lg border border-gray-200 hover:border-blue-300 hover:bg-blue-50 cursor-pointer transition-all duration-200";
+      "p-3 rounded-lg border border-gray-200 hover:border-blue-300 hover:bg-blue-50 cursor-pointer transition-all duration-200 mb-2";
 
     div.innerHTML = `
-            <div class="flex items-center">
-                <span class="text-2xl mr-3">${modulo.icone}</span>
-                <div class="flex-1">
-                    <h4 class="font-medium text-gray-800">${modulo.titulo}</h4>
-                    <p class="text-sm text-gray-600">${modulo.descricao}</p>
-                </div>
-            </div>
-        `;
+    <div class="flex items-center">
+      <span class="text-2xl mr-3">${modulo.icone}</span>
+      <div class="flex-1">
+        <h4 class="font-medium text-gray-800">${modulo.titulo}${subtitulo ? ` <span class='text-xs text-blue-600 ml-2'>${subtitulo}</span>` : ''}</h4>
+        <p class="text-sm text-gray-600">${modulo.descricao}</p>
+      </div>
+    </div>
+  `;
 
-    div.addEventListener("click", () => this.loadModulo(modulo));
+    div.addEventListener("click", () => this.loadModulo({ ...modulo, link }));
 
     return div;
   }

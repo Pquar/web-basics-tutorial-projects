@@ -8,10 +8,14 @@
 </head>
 <body>
   <div id="chat-container">
+    <div id="api-key-section">
+      <input type="password" id="api-key-input" placeholder="Cole sua chave da API Gemini aqui..." autocomplete="off">
+      <button type="button" id="save-api-key">Salvar</button>
+    </div>
     <div id="messages"></div>
     <form id="chat-form">
-      <input type="text" id="user-input" placeholder="Digite sua mensagem..." autocomplete="off">
-      <button type="submit">Enviar</button>
+      <input type="text" id="user-input" placeholder="Digite sua mensagem..." autocomplete="off" disabled>
+      <button type="submit" disabled>Enviar</button>
     </form>
   </div>
   <script src="js/script.js"></script>
