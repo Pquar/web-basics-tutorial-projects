@@ -1,0 +1,40 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+nav {
+    width: 200px;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+nav button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+nav button:hover {
+    background-color: #555;
+}
+
+#iframe-content {
+    flex: 1;
+    border: none;
+    background-color: #fff;
+}

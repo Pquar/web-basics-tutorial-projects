@@ -26,7 +26,12 @@ const loop = setInterval(() => {
         mario.style.marginLeft = '-10px';
 
         clearInterval(loop);
+        setTimeout(() => {
+            if(confirm('Game Over! Deseja reiniciar o jogo?')) {
+                location.reload();
+            }
+        }, 1000);
     }
 }, 10);
-
+ 
 document.addEventListener('keydown', jump);

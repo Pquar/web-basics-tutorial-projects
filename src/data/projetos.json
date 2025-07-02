@@ -4,27 +4,27 @@
       "titulo": "HTML Básico",
       "descricao": "Estrutura e tags fundamentais",
       "link": [
-        { "titulo": "Módulo 01 - HTML", "link": "modulo-01-html" },
-        { "titulo": "Tags", "link": "modulo-01-html/tags" }
+        { "titulo": "Módulo 01 - HTML", "link": "modulos/01-html-01-basic.md" },
+        { "titulo": "Tags", "link": "modulos/01-html-02-tags.md" }
       ],
       "icone": "📝"
     },
     {
       "titulo": "CSS Styling",
       "descricao": "Estilos e layout responsivo",
-      "link": "modulo-02-css",
+      "link": "modulos/02-css-01-basic.md",
       "icone": "🎨"
     },
     {
       "titulo": "JavaScript",
       "descricao": "Programação e interatividade",
-      "link": "modulo-03-js",
+      "link": "modulos/03-js-01-basic.md",
       "icone": "⚡"
     },
     {
       "titulo": "PHP Backend",
       "descricao": "Programação server-side",
-      "link": "modulo-04-php",
+      "link": "modulos/04-php-01-basic.md",
       "icone": "🐘"
     }
   ],
@@ -37,7 +37,7 @@
       "projetos": [
         {
           "titulo": "Jogar Agora",
-          "link": "projeto-1-jogo-t-rex/index.html"
+          "link": "projeto-01-jogo-t-rex/index.html"
         }
       ]
     },
@@ -49,11 +49,11 @@
       "projetos": [
         {
           "titulo": "Calculadora Básica",
-          "link": "projeto-2-calculadora/calculadora/index.html"
+          "link": "projeto-02-calculadora/calculadora/index.html"
         },
         {
           "titulo": "Calculadora IF-Else",
-          "link": "projeto-2-calculadora/calculadora-if-else/index.html"
+          "link": "projeto-02-calculadora/calculadora-if-else/index.html"
         }
       ]
     },
@@ -65,7 +65,7 @@
       "projetos": [
         {
           "titulo": "To-Do List",
-          "link": "projeto-3-to-do/index.html"
+          "link": "projeto-03-to-do/index.html"
         }
       ]
     },
@@ -77,11 +77,11 @@
       "projetos": [
         {
           "titulo": "Página Principal",
-          "link": "projeto-4-website/index.html"
+          "link": "projeto-04-website/index.html"
         },
         {
           "titulo": "Tokyo",
-          "link": "projeto-4-website/artigos/tokyo.html"
+          "link": "projeto-04-website/artigos/tokyo.html"
         }
       ]
     },
@@ -93,19 +93,19 @@
       "projetos": [
         {
           "titulo": "Calculadora IMC",
-          "link": "projeto-5-revisao/calculadora-imc.html"
+          "link": "projeto-05-revisao/calculadora-imc.html"
         },
         {
           "titulo": "Tabela Completa",
-          "link": "projeto-5-revisao/tabela-completa.html"
+          "link": "projeto-05-revisao/tabela-completa.html"
         },
         {
           "titulo": "Tags Semânticas",
-          "link": "projeto-5-revisao/tags-semanticas.html"
+          "link": "projeto-05-revisao/tags-semanticas.html"
         },
         {
           "titulo": "Tipos de Texto",
-          "link": "projeto-5-revisao/tipos-de-textos.html"
+          "link": "projeto-05-revisao/tipos-de-textos.html"
         }
       ]
     },
@@ -117,7 +117,7 @@
       "projetos": [
         {
           "titulo": "Pokédex",
-          "link": "projeto-6-pokedex/index.html"
+          "link": "projeto-06-pokedex/index.html"
         }
       ]
     },
@@ -129,11 +129,11 @@
       "projetos": [
         {
           "titulo": "Chuck Norris",
-          "link": "projeto-7-praticando-apis/chuck-norris/index.html"
+          "link": "projeto-07-praticando-apis/chuck-norris/index.html"
         },
         {
           "titulo": "Citações",
-          "link": "projeto-7-praticando-apis/citacao/index.html"
+          "link": "projeto-07-praticando-apis/citacao/index.html"
         }
       ]
     },
@@ -145,7 +145,7 @@
       "projetos": [
         {
           "titulo": "Ver Design",
-          "link": "projeto-8-bootstrap/index.html"
+          "link": "projeto-08-bootstrap/index.html"
         }
       ]
     },
@@ -168,7 +168,7 @@
       "tecnologias": ["HTML5", "CSS3", "JavaScript", "Iframe"],
       "projetos": [
         {
-          "titulo": "Catálogo",
+          "titulo": "Projeto em Iframe",
           "link": "projeto-11-iframe/index.html"
         }
       ]
@@ -179,13 +179,13 @@
       "titulo": "Flappy Bird",
       "descricao": "Clone do famoso jogo Flappy Bird",
       "icone": "🐦",
-      "link": "projeto-9-extras/flapy-bird/index.html"
+      "link": "projeto-09-extras/flapy-bird/index.html"
     },
     {
       "titulo": "Parallax Scrolling",
       "descricao": "Efeito visual de profundidade no scroll",
       "icone": "🌌",
-      "link": "projeto-9-extras/parallax-scrolling/"
+      "link": "projeto-09-extras/parallax-scrolling/"
     }
   ]
 }

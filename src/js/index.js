@@ -22,7 +22,7 @@ class PortfolioManager {
 
   async loadData() {
     try {
-      const response = await fetch("projeto-11-iframe/data/projetos.json");
+      const response = await fetch("src/data/projetos.json");
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -278,7 +278,7 @@ class PortfolioManager {
     this.updateContentTitle(modulo.titulo, modulo.descricao);
 
     try {
-      const readmePath = `${modulo.link}/README.md`;
+      const readmePath = `${modulo.link}`;
       const response = await fetch(readmePath);
 
       if (response.ok) {

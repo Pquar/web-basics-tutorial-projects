@@ -43,7 +43,7 @@ Para a primeira atividade comente cada linha do código html, e explique o que c
 ```
 Resultado: 
 
-![atividade_01](modulo-01-html/img/atividade_01.png)
+![atividade_01](modulos/img/atividade_01.png)
 
 ## Exercício 2: Tags HTML
 Para o segundo exercio usaremos mais alguma tags em html, para saber mais sobre essas tags acesse o link: https://www.w3schools.com/tags/default.asp ou [conteudo no github sobre tags](https://github.com/Pquar/PROJETOS-COM-HTML_CSS_JAVASCRIPT/tree/master/APRENDENDO%20html/exercicio%202%20(Tags))
@@ -100,7 +100,7 @@ Comente cada linha do código html, e explique o que cada linha faz.
 ```
 Resultado:
 
-![atividade_02](modulo-01-html/img/atividade_02.png)
+![atividade_02](modulos/img/atividade_02.png)
 
 
 ## Praticando HTML
